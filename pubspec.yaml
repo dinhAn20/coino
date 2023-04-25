@@ -60,14 +60,12 @@ dependencies:
   url_launcher: ^6.1.9
   timeago: ^3.3.0
   flutter_swiper_null_safety: ^1.0.2
-  photo_view: ^0.14.0
   flutter_share: ^2.0.0
   shimmer: ^2.0.0
-  just_audio: ^0.9.32
-  audio_session: ^0.1.13
   rxdart: ^0.27.7
   flutter_widget_from_html: ^0.9.1
-
+  auto_size_text: ^3.0.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,21 +1,21 @@
 const String iconFly = 'assets/icons/ic_fly.png';
-const String icLogo = 'assets/icons/logo.jpg';
+const String icLogo = 'assets/icons/logo.svg';
 const String kDefaultImage = 'assets/images/default.jpeg';
 const String kHeaderLogo = 'assets/images/header_logo.png';
 const String kEmptyImage = 'assets/images/empty.png';
+//onboarding
+const String kOnboarding1Image = 'assets/images/onboarding_1.png';
+const String kOnboarding2Image = 'assets/images/onboarding_2.png';
+const String kOnboarding3Image = 'assets/images/onboarding_3.png';
+const String kOnboarding4Image = 'assets/images/onboarding_4.png';
+const String kOnboarding5Image = 'assets/images/onboarding_5.png';
+
 
 const String kTulipIcon = 'assets/icons/tulip-icon.png';
 const String kOrchidIcon = 'assets/icons/orchid-icon.png';
 const String kDhaliaIcon = 'assets/icons/dhalia-icon.png';
 const String kServiceIcon = 'assets/icons/Service.png';
-const String kFacebookIcon = 'assets/icons/social_icons/facebook.png';
-const String kInstagramIcon = 'assets/icons/social_icons/instagram.png';
-const String kTiktokIcon = 'assets/icons/social_icons/tiktok.png';
-const String kTwitterIcon = 'assets/icons/social_icons/twitter.png';
-const String kWebIcon = 'assets/icons/social_icons/webicon.png';
-const String kYoutubeIcon = 'assets/icons/social_icons/youtube.png';
-const String kFollowIcon = 'assets/icons/follow-green.png';
-const String kUnFollowIcon = 'assets/icons/follow-grey.png';
+const String kGoogleIcon = 'assets/icons/google.svg';
 
 const String kEnglish = 'assets/icons/english.jpg';
 const String kSwahili = 'assets/icons/swahili_flag.jpg';

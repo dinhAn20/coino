@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:trading_app/common/theme/colors.dart';
 
 import '../generated/l10n.dart';
 
@@ -17,7 +18,8 @@ class BasicButton extends StatelessWidget {
       this.padding,
       this.disabled = false,
       this.textStyle,
-      this.icon, this.spinKitWaveColor = Colors.white})
+      this.icon,
+      this.spinKitWaveColor = Colors.white, this.radius})
       : super(key: key);
   final VoidCallback? onPressed;
   final String label;
@@ -28,6 +30,7 @@ class BasicButton extends StatelessWidget {
   final Widget? icon;
   final double? width;
   final double? height;
+  final double? radius;
   final BoxBorder? border;
   final EdgeInsetsGeometry? padding;
   final TextStyle? textStyle;
@@ -46,7 +49,7 @@ class BasicButton extends StatelessWidget {
                 : (backgroundColor ?? Theme.of(context).primaryColor)
                     .withOpacity(disabled ? 0.6 : 1),
             border: border,
-            borderRadius: BorderRadius.circular(4.0)),
+            borderRadius: BorderRadius.circular(radius?? 4.0)),
         padding:
             padding ?? const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
         child: Row(
@@ -56,7 +59,7 @@ class BasicButton extends StatelessWidget {
             if (icon != null && isLoading != true) icon!,
             if (icon != null && isLoading != true) const SizedBox(width: 6),
             if (isLoading == true)
-               SpinKitWave(
+              SpinKitWave(
                 color: spinKitWaveColor,
                 size: 20.0,
               ),
@@ -66,7 +69,7 @@ class BasicButton extends StatelessWidget {
                     Theme.of(context)
                         .textTheme
                         .bodyLarge
-                        ?.copyWith(color: textColor ?? Colors.white))
+                        ?.copyWith(color: textColor ?? kWhiteColor))
           ],
         ),
       ),

@@ -6,15 +6,9 @@ import 'package:trading_app/common/event/event_bus_mixin.dart';
 import 'package:trading_app/common/utils/navigator_utils.dart';
 import 'package:trading_app/modules/auth/screens/forgot_password_screen.dart';
 import 'package:trading_app/modules/auth/screens/signup_screen.dart';
-import 'package:trading_app/modules/ayah/screens/ayah_detail_screen.dart';
-import 'package:trading_app/modules/book/screens/book_screen.dart';
-import 'package:trading_app/modules/book/screens/chapter_detail_screen.dart';
-import 'package:trading_app/modules/book/screens/chapter_screen.dart';
 import 'package:trading_app/modules/common/bloc/app_cubit.dart';
 import 'package:trading_app/modules/common/screens/webview_screen.dart';
 import 'package:trading_app/modules/home/screens/home_screen.dart';
-import 'package:trading_app/modules/juzu/screens/juzu_detail_screen.dart';
-import 'package:trading_app/modules/juzu/screens/juzu_screen.dart';
 import 'package:trading_app/modules/language/screens/language_screen.dart';
 import 'package:trading_app/modules/my_profile/screens/change_password_screen.dart';
 import 'package:trading_app/modules/my_profile/screens/update_profile_screen.dart';
@@ -24,11 +18,10 @@ import '../di/injection.dart';
 import '../generated/l10n.dart';
 import '../modules/auth/screens/login_screen.dart';
 import 'auth/bloc/auth_cubit.dart';
-import 'ayah/screens/ayahs_screen.dart';
-import 'ayah/screens/search_ayahs_screen.dart';
 import 'common/screens/sync_screen.dart';
 import 'my_profile/screens/my_profile_screen.dart';
 import 'my_profile/screens/my_profile_settings_screen.dart';
+import 'onboarding/screens/onboarding_screen.dart';
 
 class App extends StatefulWidget with EventBusMixin {
   const App({Key? key}) : super(key: key);
@@ -64,10 +57,11 @@ class _AppState extends State<App> {
         themeMode: ThemeMode.light,
         theme: ThemeApp.lightTheme,
         darkTheme: ThemeApp.darkTheme,
-        initialRoute: kMainRoute,
+        initialRoute: kSyncRoute,
         navigatorKey: NavigatorUtils.instance.navigatorKey,
         routes: {
           kMainRoute: (context) => const HomeScreen(),
+          kOnboardingRoute: (context) => const OnboaringScreen(),
           kSyncRoute: (context) => const SyncScreen(),
           kLoginRoute: (context) => const LoginScreen(),
           kSignUpRoute: (context) => const SignUpScreen(),
@@ -78,13 +72,6 @@ class _AppState extends State<App> {
           kEditProfileRoute: (context) => const EditProfileScreen(),
           kMyProfileRoute: (context) => const MyProfileScreen(),
           kLanguageRoute: (context) => const LanguageScreen(),
-          kAyahsRoute: (context) => const AyahsScreen(),
-          kAyahDetailRoute: (context) => const AyahDetailScreen(),
-          kJuZuRoute: (context) => const JuzuScreen(),
-          kBookRoute: (context) => const BookScreen(),
-          kChapterRoute: (context) => const ChapterScreen(),
-          kJuzuDetailRoute: (context) => const JuZuDetailScreen(),
-          kSearchAyahsRoute: (context) => const SearchAyahsScreen(),
         },
       ),
     );

@@ -312,10 +312,10 @@ class ExpandableNotifier extends StatefulWidget {
         super(key: key);
 
   @override
-  _ExpandableNotifierState createState() => _ExpandableNotifierState();
+  ExpandableNotifierState createState() => ExpandableNotifierState();
 }
 
-class _ExpandableNotifierState extends State<ExpandableNotifier> {
+class ExpandableNotifierState extends State<ExpandableNotifier> {
   ExpandableController? controller;
   ExpandableThemeData? theme;
 
@@ -650,10 +650,10 @@ class ExpandableIcon extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ExpandableIconState createState() => _ExpandableIconState();
+  ExpandableIconState createState() => ExpandableIconState();
 }
 
-class _ExpandableIconState extends State<ExpandableIcon>
+class ExpandableIconState extends State<ExpandableIcon>
     with SingleTickerProviderStateMixin {
   AnimationController? animationController;
   Animation<double>? animation;
@@ -800,10 +800,10 @@ class ScrollOnExpand extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ScrollOnExpandState createState() => _ScrollOnExpandState();
+  ScrollOnExpandState createState() => ScrollOnExpandState();
 }
 
-class _ScrollOnExpandState extends State<ScrollOnExpand> {
+class ScrollOnExpandState extends State<ScrollOnExpand> {
   ExpandableController? _controller;
   int _isAnimating = 0;
   BuildContext? _lastContext;
