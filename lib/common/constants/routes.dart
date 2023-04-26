@@ -1,6 +1,8 @@
 const String kMainRoute = '/main';
 const String kSyncRoute = '/sync';
 const String kSignInRoute = '/login';
+const String kSetPinCodeRoute = '/set-pin-code';
+const String kInputCodeRoute = '/input-code';
 const String kOnboardingRoute = '/onboarding';
 const String kSignUpRoute = '/sign-up';
 const String kForgotPasswordRoute = '/forgot-pass';

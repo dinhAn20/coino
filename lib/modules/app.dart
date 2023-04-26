@@ -17,6 +17,8 @@ import '../common/theme/index.dart';
 import '../di/injection.dart';
 import '../generated/l10n.dart';
 import 'auth/bloc/auth_cubit.dart';
+import 'auth/screens/input_code_screen.dart';
+import 'auth/screens/set_pin_code_screen.dart';
 import 'auth/screens/sign_in_screen.dart';
 import 'common/screens/sync_screen.dart';
 import 'my_profile/screens/my_profile_screen.dart';
@@ -64,6 +66,8 @@ class _AppState extends State<App> {
           kOnboardingRoute: (context) => const OnboaringScreen(),
           kSyncRoute: (context) => const SyncScreen(),
           kSignInRoute: (context) => const SignInScreen(),
+          kSetPinCodeRoute: (context) => const SetPinCodeScreen(),
+          kInputCodeRoute: (context) => const InputCodeScreen(),
           kSignUpRoute: (context) => const SignUpScreen(),
           kForgotPasswordRoute: (context) => const ForgotPasswordScreen(),
           kWebViewRoute: (context) => const WebViewScreen(),

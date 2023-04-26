@@ -8,6 +8,7 @@ import 'package:trading_app/widgets/text_field.dart';
 
 import '../../../common/constants/routes.dart';
 import '../../../common/enums/status.dart';
+import '../../../widgets/button.dart';
 import '../bloc/auth_state.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -18,7 +19,6 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
 
   @override
@@ -38,26 +38,37 @@ class _SignInScreenState extends State<SignInScreen> {
           }
         },
         builder: (context, AuthState state) {
-          return SingleChildScrollView(
+          return Padding(
             padding: const EdgeInsets.all(24),
-            child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    const TitleWithSubtitleText(
-                      title: "Hello there 👋",
-                      subTitle:
-                          "Please enter your account email address. We will send an OTP code for verification in the next step.",
-                    ),
-                    SizedBox(
-                      height: getProportionateScreenHeight(32),
-                    ),
-                    BasicTextField(
-                      label: "Email",
-                      controller: _emailController,
-                    )
-                  ],
-                )),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const TitleWithSubtitleText(
+                        title: "Hello there 👋",
+                        subTitle:
+                            "Please enter your account email address. We will send an OTP code for verification in the next step.",
+                      ),
+                      SizedBox(
+                        height: getProportionateScreenHeight(32),
+                      ),
+                      BasicTextField(
+                        label: "Email",
+                        controller: _emailController,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 32),
+                BasicButton(
+                  label: "Continue",
+                  onPressed: () =>
+                      Navigator.pushNamed(context, kInputCodeRoute),
+                ),
+              ],
+            ),
           );
         },
       ),

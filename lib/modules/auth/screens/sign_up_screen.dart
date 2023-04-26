@@ -8,6 +8,7 @@ import '../../../common/constants/routes.dart';
 import '../../../common/enums/status.dart';
 import '../../../widgets/button.dart';
 import '../bloc/auth_state.dart';
+import '../helpers/enums/sign_up_tab_enum.dart';
 import '../widgets/sign_up_tabs.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -38,8 +39,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: (_currentTab == SignUpTab.congratulations ||
-                _currentTab == SignUpTab.setPINCode)
+        title: (_currentTab == SignUpTab.congratulations)
             ? null
             : ClipRRect(
                 borderRadius: BorderRadius.circular(5),
@@ -78,8 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: const EdgeInsets.all(24.0),
             child: Column(
               children: [
-                Expanded(
-                    child: SignUpTabs(signUpTab: _currentTab)),
+                Expanded(child: SignUpTabs(signUpTab: _currentTab)),
                 const SizedBox(height: 32),
                 BasicButton(
                   label: "Continue",
@@ -93,4 +92,3 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
-
