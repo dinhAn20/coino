@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trading_app/data/local/datasource/auth_local_datasource.dart';
 import 'package:trading_app/generated/l10n.dart';
-import 'package:trading_app/modules/auth/bloc/auth_state.dart';
 import '../../../common/constants/routes.dart';
 import '../../../common/event/event_bus_event.dart';
 import '../../../common/event/event_bus_mixin.dart';
@@ -38,48 +37,26 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      key: _key,
-      drawer: const DrawerApp(),
-      appBar: AppBar(
-        title: Text(S.of(context).home),
-        leading: IconButton(
-          onPressed: () {
-            _key.currentState?.openDrawer();
-          },
-          icon: const Icon(CupertinoIcons.text_alignleft),
-        ),
-        actions: [
-          BlocBuilder<AuthCubit, AuthState>(
-              builder: (BuildContext context, AuthState state) {
-            if (state.user?.lastReadAyah != null) {
-              return IconButton(
-                onPressed: () {
-                
-                },
-                icon: const Icon(CupertinoIcons.book),
-              );
-            } else {
-              return const SizedBox();
-            }
-          }),
-          IconButton(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        key: _key,
+        drawer: const DrawerApp(),
+        appBar: AppBar(
+          title: Text(S.of(context).home),
+          leading: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, kSearchAyahsRoute);
+              _key.currentState?.openDrawer();
             },
-            icon: const Icon(CupertinoIcons.search),
-          )
-        ],
-      ),
-      body: Container()
-    );
+            icon: const Icon(CupertinoIcons.text_alignleft),
+          ),
+        ),
+        body: Container());
   }
 
   void _logout() {
     String? token = getIt<AuthLocalDatasource>().getLoggedInToken();
     if (token?.isNotEmpty ?? false) {
       context.read<AuthCubit>().logout();
-      Navigator.of(context).pushReplacementNamed(kLoginRoute);
+      Navigator.of(context).pushReplacementNamed(kSignInRoute);
     }
   }
 

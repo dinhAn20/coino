@@ -10,6 +10,9 @@ const String kOnboarding3Image = 'assets/images/onboarding_3.png';
 const String kOnboarding4Image = 'assets/images/onboarding_4.png';
 const String kOnboarding5Image = 'assets/images/onboarding_5.png';
 
+const String kSelfieImage = 'assets/images/selfie_with_id_card.png';
+const String kCongratulationsImage = 'assets/images/congratulations.png';
+
 
 const String kTulipIcon = 'assets/icons/tulip-icon.png';
 const String kOrchidIcon = 'assets/icons/orchid-icon.png';

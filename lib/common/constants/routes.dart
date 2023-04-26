@@ -1,6 +1,6 @@
 const String kMainRoute = '/main';
 const String kSyncRoute = '/sync';
-const String kLoginRoute = '/login';
+const String kSignInRoute = '/login';
 const String kOnboardingRoute = '/onboarding';
 const String kSignUpRoute = '/sign-up';
 const String kForgotPasswordRoute = '/forgot-pass';

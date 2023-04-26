@@ -26,9 +26,10 @@ class BasicTextField extends StatelessWidget {
       this.suffixIcon,
       this.hintText,
       this.hintStyle,
+      this.textStyle,
       this.focusNode,
       this.fillColor,
-      this.hasBoder = false})
+      this.border})
       : super(key: key);
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
@@ -38,11 +39,12 @@ class BasicTextField extends StatelessWidget {
   final String? prefix;
   final String? hintText;
   final TextStyle? hintStyle;
+  final TextStyle? textStyle;
   final bool? obscureText;
   final bool multiline;
   final FocusNode? focusNode;
   final Color? fillColor;
-  final bool hasBoder;
+  final InputBorder? border;
   final TextInputType keyboardType;
   final ValueChanged<String>? onFieldSubmitted;
   final String? initialValue;
@@ -62,7 +64,7 @@ class BasicTextField extends StatelessWidget {
             children: [
               Text(
                 label!,
-                style: Theme.of(context).textTheme.labelMedium,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               if (mandatory ?? false) const SizedBox(width: 1),
               if (mandatory ?? false)
@@ -83,54 +85,47 @@ class BasicTextField extends StatelessWidget {
         if (labelWidget != null) labelWidget!,
         if ((label?.isNotEmpty ?? false) || (labelWidget != null))
           const SizedBox(height: 10.0),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(4.0),
-          child: SizedBox(
-            height: multiline ? 150 : null,
-            child: TextFormField(
-              controller: controller,
-              validator: validator,
-              focusNode: focusNode,
-              obscureText: obscureText ?? false,
-              keyboardType: multiline ? TextInputType.multiline : keyboardType,
-              initialValue: initialValue,
-              maxLines: multiline ? null : 1,
-              readOnly: readOnly ?? false,
-              expands: multiline,
-              decoration: InputDecoration(
-                isDense: true,
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                suffixIcon: suffixIcon,
-                hintText: hintText,
-                hintStyle: hintStyle,
-                prefixIcon: (prefix?.isNotEmpty ?? false)
-                    ? Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Center(
-                              child: Text(prefix!,
-                                  style:
-                                      Theme.of(context).textTheme.labelMedium),
-                            ),
+        SizedBox(
+          height: multiline ? 150 : null,
+          child: TextFormField(
+            controller: controller,
+            validator: validator,
+            focusNode: focusNode,
+            obscureText: obscureText ?? false,
+            keyboardType: multiline ? TextInputType.multiline : keyboardType,
+            initialValue: initialValue,
+            maxLines: multiline ? null : 1,
+            readOnly: readOnly ?? false,
+            expands: multiline,
+            style: textStyle ?? Theme.of(context).textTheme.headlineSmall,
+            decoration: InputDecoration(
+              isDense: true,
+              contentPadding: const EdgeInsets.symmetric(vertical: 8),
+              suffixIcon: suffixIcon,
+              hintText: hintText,
+              hintStyle: hintStyle,
+              prefixIcon: (prefix?.isNotEmpty ?? false)
+                  ? Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Center(
+                            child: Text(prefix!,
+                                style: Theme.of(context).textTheme.labelMedium),
                           ),
-                        ],
-                      )
-                    : null,
-                filled: true,
-                fillColor: fillColor,
-                border: hasBoder
-                    ? const OutlineInputBorder(
-                        borderSide: BorderSide(color: kGreyColor))
-                    : InputBorder.none,
-              ),
-              onFieldSubmitted: onFieldSubmitted,
-              onChanged: onChanged,
-              enabled: enabled,
+                        ),
+                      ],
+                    )
+                  : null,
+              // filled: true,
+              fillColor: fillColor,
+              border: border,
             ),
+            onFieldSubmitted: onFieldSubmitted,
+            onChanged: onChanged,
+            enabled: enabled,
           ),
         )
       ],
@@ -190,12 +185,14 @@ class SelectDateTextField extends StatelessWidget {
     this.controller,
     this.validator,
     this.initialValue,
+    this.textStyle,
   }) : super(key: key);
   final String? label;
   final String? desc;
   final DateTime? value;
   final Function(DateTime?)? onChanged;
   final bool? enabled;
+  final TextStyle? textStyle;
   final double? width;
   final Color? backgroundColor;
   final TextEditingController? controller;
@@ -223,15 +220,16 @@ class SelectDateTextField extends StatelessWidget {
             onTap: () => _showDatePicker(context),
             readOnly: true,
             controller: controller,
+            style: textStyle ?? Theme.of(context).textTheme.headlineSmall,
             validator: validator,
             initialValue: initialValue,
             decoration: const InputDecoration(
               isDense: true,
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-              prefixIcon: Icon(Icons.calendar_month, color: Colors.grey),
-              filled: true,
-              border: InputBorder.none,
+              contentPadding: EdgeInsets.symmetric(vertical: 8),
+              suffixIcon: Icon(
+                Icons.calendar_month,
+                size: 28,
+              ),
             ),
             enabled: enabled,
           ),

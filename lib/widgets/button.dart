@@ -19,7 +19,8 @@ class BasicButton extends StatelessWidget {
       this.disabled = false,
       this.textStyle,
       this.icon,
-      this.spinKitWaveColor = Colors.white, this.radius})
+      this.spinKitWaveColor = Colors.white,
+      this.radius})
       : super(key: key);
   final VoidCallback? onPressed;
   final String label;
@@ -42,16 +43,16 @@ class BasicButton extends StatelessWidget {
       onTap: isLoading == true || disabled ? null : onPressed,
       child: Container(
         height: height,
-        width: width,
+        width: width ?? double.infinity,
         decoration: BoxDecoration(
             color: backgroundColor == Colors.transparent
                 ? backgroundColor
                 : (backgroundColor ?? Theme.of(context).primaryColor)
                     .withOpacity(disabled ? 0.6 : 1),
             border: border,
-            borderRadius: BorderRadius.circular(radius?? 4.0)),
+            borderRadius: BorderRadius.circular(radius ?? 100.0)),
         padding:
-            padding ?? const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+            padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,

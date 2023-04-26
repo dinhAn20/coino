@@ -13,8 +13,20 @@ class ThemeApp {
     hintColor: const Color(0xFFC5C5C5),
     scaffoldBackgroundColor: kWhiteColor,
     cardColor: Colors.white,
+    iconTheme: const IconThemeData(
+      color: kPrimaryColor,
+    ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: kPrimaryColor,
+    ),
+    checkboxTheme: CheckboxThemeData(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      fillColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
+      overlayColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
+    ),
+    radioTheme: RadioThemeData(
+      fillColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
+      overlayColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
     ),
     textTheme: ThemeData.light().textTheme.copyWith(
           //headline1
@@ -81,10 +93,19 @@ class ThemeApp {
               fontWeight: FontWeight.bold,
               letterSpacing: 0.2),
         ),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
+    dividerColor: kGray200,
     appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle.light,
         centerTitle: true,
-        backgroundColor: kPrimaryColor),
+        actionsIconTheme: IconThemeData(color: kGray900),
+        iconTheme: IconThemeData(
+          color: kGray900,
+        ),
+        elevation: 0,
+        backgroundColor: kWhiteColor),
     colorScheme: const ColorScheme.light()
         .copyWith(background: const Color(0xFFFFFFFF), primary: kPrimaryColor)
         .copyWith(error: const Color(0xFFe74c3c)),
@@ -94,6 +115,7 @@ class ThemeApp {
     primaryColor: kPrimaryColor,
     hintColor: const Color(0xFFC5C5C5),
     cardColor: kDark1Color,
+    dividerColor: kDark3,
     scaffoldBackgroundColor: kDark1Color,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: kPrimaryColor,
@@ -163,10 +185,14 @@ class ThemeApp {
               fontWeight: FontWeight.bold,
               letterSpacing: 0.2),
         ),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         centerTitle: true,
-        backgroundColor: kPrimaryColor),
+        elevation: 0,
+        backgroundColor: kDark1Color),
     colorScheme: const ColorScheme.dark().copyWith(background: kDark1Color),
   );
 }

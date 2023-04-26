@@ -5,7 +5,7 @@ import 'package:trading_app/common/constants/routes.dart';
 import 'package:trading_app/common/event/event_bus_mixin.dart';
 import 'package:trading_app/common/utils/navigator_utils.dart';
 import 'package:trading_app/modules/auth/screens/forgot_password_screen.dart';
-import 'package:trading_app/modules/auth/screens/signup_screen.dart';
+import 'package:trading_app/modules/auth/screens/sign_up_screen.dart';
 import 'package:trading_app/modules/common/bloc/app_cubit.dart';
 import 'package:trading_app/modules/common/screens/webview_screen.dart';
 import 'package:trading_app/modules/home/screens/home_screen.dart';
@@ -16,8 +16,8 @@ import 'package:trading_app/modules/my_profile/screens/update_profile_screen.dar
 import '../common/theme/index.dart';
 import '../di/injection.dart';
 import '../generated/l10n.dart';
-import '../modules/auth/screens/login_screen.dart';
 import 'auth/bloc/auth_cubit.dart';
+import 'auth/screens/sign_in_screen.dart';
 import 'common/screens/sync_screen.dart';
 import 'my_profile/screens/my_profile_screen.dart';
 import 'my_profile/screens/my_profile_settings_screen.dart';
@@ -63,7 +63,7 @@ class _AppState extends State<App> {
           kMainRoute: (context) => const HomeScreen(),
           kOnboardingRoute: (context) => const OnboaringScreen(),
           kSyncRoute: (context) => const SyncScreen(),
-          kLoginRoute: (context) => const LoginScreen(),
+          kSignInRoute: (context) => const SignInScreen(),
           kSignUpRoute: (context) => const SignUpScreen(),
           kForgotPasswordRoute: (context) => const ForgotPasswordScreen(),
           kWebViewRoute: (context) => const WebViewScreen(),

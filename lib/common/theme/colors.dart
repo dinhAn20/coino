@@ -24,7 +24,7 @@ const kGray90099 = Color(0X9909101D);
 const kGray900Cc = Color(0XCC181A20);
 const kDark3 = Color(0XFF35383F);
 const kGreenA200 = Color(0XFF71E3BB);
-const kGray50 = Color(0XFFF9F9F9);
+const kGray50 = Color(0XFFFAFAFA);
 const kTeal500 = Color(0XFF0EA772);
 const kBlack900 = Color(0XFF000000);
 const kGray900A2 = Color(0XA2181A20);
@@ -55,3 +55,52 @@ const kRedA20014 = Color(0X14FF5A5F);
 const kBlack90014 = Color(0X1404060F);
 const kWhiteA700 = Color(0XFFFFFFFF);
 const kTealA7003f = Color(0X3F12D18E);
+const kGreenGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      kPrimary300Color,
+      kPrimaryColor,
+    ]);
+const kYellowGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0XFFFFE580),
+      Color(0XFFFACC15),
+    ]);
+const kBlueGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0XFF5089FD),
+      kBlueA70014,
+    ]);
+const kPurpleGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0XFF876DFF),
+      kDeepPurpleA20014,
+    ]);
+const kTealGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0XFF18C6AB),
+      Color(0XFF019B83),
+    ]);
+const kRedGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0XFFFF8A9B),
+      Color(0XFFFF5A5F),
+    ]);
+const kOrangeGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0XFFFFAB38),
+      Color(0XFFFB9400),
+    ]);

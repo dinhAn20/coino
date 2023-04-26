@@ -1,6 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:trading_app/common/constants/images.dart';
+import 'package:trading_app/common/constants/routes.dart';
+import 'package:trading_app/common/utils/extensions/interable_extension.dart';
+import 'package:trading_app/common/utils/extensions/text_style_extension.dart';
 import 'package:trading_app/generated/l10n.dart';
 import 'package:trading_app/widgets/cached_image.dart';
 
@@ -67,20 +70,22 @@ class _BodyState extends State<Body> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: PageView.builder(
-                onPageChanged: (value) {
-                  setState(() {
-                    currentPage = value;
-                  });
-                },
-                itemCount: onboardingData.length,
-                itemBuilder: (context, index) => SplashContent(
-                  index: index,
-                  image: onboardingData[index]["image"] ?? "",
-                  title: onboardingData[index]["title"] ?? "",
-                  subTitle: onboardingData[index]["subTitle"] ?? "",
-                ),
-              ),
+              child: PageView(
+                  onPageChanged: (value) {
+                    setState(() {
+                      currentPage = value;
+                    });
+                  },
+                  children: onboardingData
+                      .mapIndexed(
+                        (e, i) => SplashContent(
+                          index: i,
+                          image: e["image"] ?? "",
+                          title: e["title"] ?? "",
+                          subTitle: e["subTitle"] ?? "",
+                        ),
+                      )
+                      .toList()),
             ),
             Flexible(
               flex: 0,
@@ -109,10 +114,7 @@ class _BodyState extends State<Body> {
                         border: Border.all(color: kGray200),
                         radius: 100,
                         width: double.infinity,
-                        textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                            ?.copyWith(fontWeight: FontWeight.w600),
+                        textStyle: Theme.of(context).textTheme.bodyLarge!.w600,
                         label: "Continue with Google"),
                     const SizedBox(height: 16),
                     BasicButton(
@@ -120,12 +122,10 @@ class _BodyState extends State<Body> {
                         backgroundColor: kPrimaryColor,
                         radius: 100,
                         width: double.infinity,
-                        textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                            ?.copyWith(
-                                color: kWhiteColor,
-                                fontWeight: FontWeight.w600),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, kSignUpRoute),
+                        textStyle:
+                            Theme.of(context).textTheme.bodyLarge!.white.w600,
                         label: S.of(context).signUp),
                     const SizedBox(height: 16),
                     BasicButton(
@@ -133,12 +133,10 @@ class _BodyState extends State<Body> {
                         backgroundColor: kPrimary100Color,
                         radius: 100,
                         width: double.infinity,
-                        textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                            ?.copyWith(
-                                fontWeight: FontWeight.w600,
-                                color: kPrimaryColor),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, kSignInRoute),
+                        textStyle:
+                            Theme.of(context).textTheme.bodyLarge!.w600.primary,
                         label: "Sign In"),
                   ],
                 ),
@@ -203,8 +201,7 @@ class SplashContent extends StatelessWidget {
                             text: " Coino 👋 ",
                             style: Theme.of(context)
                                 .textTheme
-                                .displaySmall
-                                ?.copyWith(color: kPrimaryColor),
+                                .displaySmall!.primary,
                           ),
                         ]),
                         maxFontSize: 32,
@@ -223,8 +220,7 @@ class SplashContent extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w500),
+                      .titleMedium!.w500,
                 ),
               ],
             ),
