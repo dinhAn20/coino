@@ -23,6 +23,7 @@ import 'auth/screens/sign_in_screen.dart';
 import 'common/screens/sync_screen.dart';
 import 'my_profile/screens/my_profile_screen.dart';
 import 'my_profile/screens/my_profile_settings_screen.dart';
+import 'notifications/screens/notification_screen.dart';
 import 'onboarding/screens/onboarding_screen.dart';
 
 class App extends StatefulWidget with EventBusMixin {
@@ -56,7 +57,7 @@ class _AppState extends State<App> {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
         theme: ThemeApp.lightTheme,
         darkTheme: ThemeApp.darkTheme,
         initialRoute: kMainRoute,
@@ -71,6 +72,7 @@ class _AppState extends State<App> {
           kSignUpRoute: (context) => const SignUpScreen(),
           kForgotPasswordRoute: (context) => const ForgotPasswordScreen(),
           kWebViewRoute: (context) => const WebViewScreen(),
+          kNotificationRoute: (context) => const NotificationScreen(),
           kChangePasswordRoute: (context) => const ChangePasswordScreen(),
           kSettingsRoute: (context) => const SettingsScreen(),
           kEditProfileRoute: (context) => const EditProfileScreen(),

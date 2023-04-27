@@ -83,7 +83,8 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
                             ?.color)),
                 const SizedBox(width: 20),
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () =>
+                        Navigator.pushNamed(context, kNotificationRoute),
                     child: kNotification.toSvg(
                         height: 28,
                         width: 28,

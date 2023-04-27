@@ -31,6 +31,15 @@ const String kOnboarding5Image = 'assets/images/onboarding_5.png';
 const String kNotification = 'assets/icons/Notification.svg';
 const String kScan = 'assets/icons/Scan.svg';
 const String kSearch = 'assets/icons/Search.svg';
+const String kSetting = 'assets/icons/Setting.svg';
+
+//Notification
+const String kTickSquare = 'assets/icons/tick_square.png';
+const String kTickerStarSquare = 'assets/icons/ticker_star.png';
+const String kWalletSquare = 'assets/icons/wallet.png';
+const String kWorkSquare = 'assets/icons/work.png';
+const String kProfileSquare = 'assets/icons/profile.png';
+const String kInforSquare = 'assets/icons/info_square.png';
 
 
 const String kSelfieImage = 'assets/images/selfie_with_id_card.png';

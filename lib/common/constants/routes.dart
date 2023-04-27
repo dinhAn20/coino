@@ -7,6 +7,7 @@ const String kOnboardingRoute = '/onboarding';
 const String kSignUpRoute = '/sign-up';
 const String kForgotPasswordRoute = '/forgot-pass';
 const String kWebViewRoute = '/web-view';
+const String kNotificationRoute = '/notification';
 const String kMyProfileRoute = '/profile';
 const String kChangePasswordRoute = '/change-password';
 const String kSettingsRoute = '/settings';

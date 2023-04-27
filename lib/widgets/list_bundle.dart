@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:trading_app/common/theme/colors.dart';
+import 'package:trading_app/common/utils/extensions/text_style_extension.dart';
 
 import '../common/constants/images.dart';
-import '../generated/l10n.dart';
 import '../models/pagination.dart';
 import 'cached_image.dart';
 
@@ -16,14 +16,18 @@ class ListBundle extends StatefulWidget {
       required this.status,
       required this.onRefresh,
       this.onLoadMore,
-      this.errMsg})
+      this.errMsg,
+      this.emptyMsg,
+      this.padding})
       : super(key: key);
 
   final Widget child;
   final DataSourceStatus? status;
   final RefreshCallback onRefresh;
+  final EdgeInsetsGeometry? padding;
   final RefreshCallback? onLoadMore;
   final String? errMsg;
+  final String? emptyMsg;
 
   @override
   State<ListBundle> createState() => _ListBundleState();
@@ -48,21 +52,31 @@ class _ListBundleState extends State<ListBundle> {
         return _buildRefreshingWidget(context);
       case DataSourceStatus.empty:
         return Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const CachedImage(
-                url: kEmptyImage,
-                width: 200,
-                height: 200,
-                fit: BoxFit.contain,
-              ),
-              const SizedBox(height: 15),
-              Text(
-                S.of(context).noItems,
-                style: Theme.of(context).textTheme.displayLarge,
-              )
-            ],
+          child: Padding(
+            padding: widget.padding ?? EdgeInsets.zero,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const CachedImage(
+                  url: kEmptyImage,
+                  width: 280,
+                  fit: BoxFit.contain,
+                ),
+                const SizedBox(height: 60),
+                Text(
+                  "Empty",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                if (widget.emptyMsg?.isNotEmpty ?? false)
+                  const SizedBox(height: 12),
+                if (widget.emptyMsg?.isNotEmpty ?? false)
+                  Text(
+                    widget.emptyMsg!,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium!.w400,
+                  ),
+              ],
+            ),
           ),
         );
       case DataSourceStatus.loadMore:
@@ -83,24 +97,21 @@ class _ListBundleState extends State<ListBundle> {
     );
   }
 
-  Padding _buildSuccessWidget(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: RefreshIndicator(
-              onRefresh: () => widget.onRefresh(context),
-              child: widget.child,
-            ),
+  Widget _buildSuccessWidget(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: RefreshIndicator(
+            onRefresh: () => widget.onRefresh(context),
+            child: widget.child,
           ),
-          Visibility(
-            visible: widget.status == DataSourceStatus.loadMore &&
-                widget.onLoadMore != null,
-            child: _buildLoadingWidget(),
-          )
-        ],
-      ),
+        ),
+        Visibility(
+          visible: widget.status == DataSourceStatus.loadMore &&
+              widget.onLoadMore != null,
+          child: _buildLoadingWidget(),
+        )
+      ],
     );
   }
 
