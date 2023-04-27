@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trading_app/common/utils/extensions/text_style_extension.dart';
+import '../../../common/constants/routes.dart';
 import '../../../configs/size_config.dart';
 import '../../../widgets/button.dart';
 import '../widgets/pin_code_field.dart';
@@ -52,7 +53,9 @@ class _InputCodeScreenState extends State<InputCodeScreen> {
             const SizedBox(height: 32),
             BasicButton(
               label: "Confirm",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, kMainRoute);
+              },
             )
           ],
         ),

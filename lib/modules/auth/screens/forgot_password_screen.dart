@@ -69,7 +69,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       children: [
                         const SizedBox(height: 30),
                         const SizedBox(
-                            height: 100, child: CachedImage(url: icLogo)),
+                            height: 100, child: CachedImage(url: kLogo)),
                         const SizedBox(height: 10),
                         Text(S
                             .of(context)

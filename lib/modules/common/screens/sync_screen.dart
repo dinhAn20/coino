@@ -42,7 +42,7 @@ class _SyncScreenState extends State<SyncScreen> {
               child: Column(
                 children: [
                   CachedImage(
-                    url: icLogo,
+                    url: kLogo,
                     width: getProportionateScreenHeight(173),
                     height: getProportionateScreenHeight(173),
                   ),

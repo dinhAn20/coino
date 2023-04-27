@@ -59,7 +59,7 @@ class _AppState extends State<App> {
         themeMode: ThemeMode.light,
         theme: ThemeApp.lightTheme,
         darkTheme: ThemeApp.darkTheme,
-        initialRoute: kSyncRoute,
+        initialRoute: kMainRoute,
         navigatorKey: NavigatorUtils.instance.navigatorKey,
         routes: {
           kMainRoute: (context) => const HomeScreen(),

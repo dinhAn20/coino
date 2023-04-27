@@ -29,6 +29,9 @@ extension TextStyleX on TextStyle {
   TextStyle get primary {
     return copyWith(color: kPrimaryColor);
   }
+  TextStyle get red {
+    return copyWith(color: kErrorRedColor);
+  }
 
   TextStyle get gray500 {
     return copyWith(color: kGray500);

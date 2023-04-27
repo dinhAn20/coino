@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'colors.dart';
 
 class ThemeApp {
-  static String get fontFamily => 'Lato';
+  static String get fontFamily => 'Urbanist';
   static TextStyle get baseTextStyle =>
       TextStyle(fontSize: 16, fontFamily: fontFamily);
 
@@ -15,6 +15,56 @@ class ThemeApp {
     cardColor: Colors.white,
     iconTheme: const IconThemeData(
       color: kPrimaryColor,
+    ),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
+    dividerColor: kGray200,
+    appBarTheme: AppBarTheme(
+        systemOverlayStyle: SystemUiOverlayStyle.light,
+        centerTitle: false,
+        titleTextStyle: baseTextStyle.copyWith(
+          fontSize: 24,
+          color: kGray900,
+          fontWeight: FontWeight.bold,
+        ),
+        actionsIconTheme: const IconThemeData(color: kGray900),
+        iconTheme: const IconThemeData(
+          color: kGray900,
+        ),
+        elevation: 0,
+        backgroundColor: kWhiteColor),
+    colorScheme: const ColorScheme.light()
+        .copyWith(background: const Color(0xFFFFFFFF), primary: kPrimaryColor)
+        .copyWith(error: const Color(0xFFe74c3c)),
+    tabBarTheme: TabBarTheme(
+        indicatorColor: kPrimaryColor,
+        dividerColor: kGray200,
+        indicator: const BoxDecoration(
+          border: Border(bottom: BorderSide(color: kPrimaryColor, width: 4)),
+        ),
+        labelColor: kPrimaryColor,
+        unselectedLabelColor: kGray500,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+        labelStyle: baseTextStyle.copyWith(
+            fontSize: 18, fontWeight: FontWeight.w600, color: kPrimaryColor),
+        unselectedLabelStyle: baseTextStyle.copyWith(
+            fontSize: 18, fontWeight: FontWeight.w600, color: kGray500)),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: kWhiteColor,
+      elevation: 0,
+      selectedIconTheme: const IconThemeData(size: 28, color: kPrimaryColor),
+      unselectedIconTheme: const IconThemeData(size: 24, color: kGray500),
+      selectedLabelStyle: baseTextStyle.copyWith(
+        fontSize: 12,
+        fontWeight: FontWeight.w700,
+        color: kPrimaryColor,
+      ),
+      unselectedLabelStyle: baseTextStyle.copyWith(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: kGray500,
+      ),
     ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: kPrimaryColor,
@@ -93,22 +143,6 @@ class ThemeApp {
               fontWeight: FontWeight.bold,
               letterSpacing: 0.2),
         ),
-    splashColor: Colors.transparent,
-    highlightColor: Colors.transparent,
-    hoverColor: Colors.transparent,
-    dividerColor: kGray200,
-    appBarTheme: const AppBarTheme(
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        centerTitle: true,
-        actionsIconTheme: IconThemeData(color: kGray900),
-        iconTheme: IconThemeData(
-          color: kGray900,
-        ),
-        elevation: 0,
-        backgroundColor: kWhiteColor),
-    colorScheme: const ColorScheme.light()
-        .copyWith(background: const Color(0xFFFFFFFF), primary: kPrimaryColor)
-        .copyWith(error: const Color(0xFFe74c3c)),
   );
 
   static ThemeData darkTheme = ThemeData.dark().copyWith(
@@ -120,6 +154,52 @@ class ThemeApp {
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: kPrimaryColor,
     ),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
+    appBarTheme: AppBarTheme(
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+        centerTitle: false,
+        actionsIconTheme: const IconThemeData(
+          color: kWhiteColor,
+        ),
+        elevation: 0,
+        titleTextStyle: baseTextStyle.copyWith(
+          fontSize: 24,
+          color: kWhiteColor,
+          fontWeight: FontWeight.bold,
+        ),
+        backgroundColor: kDark1Color),
+    colorScheme: const ColorScheme.dark().copyWith(background: kDark1Color),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: kDark1Color.withOpacity(0.85),
+      elevation: 0,
+      selectedIconTheme: const IconThemeData(size: 28, color: kPrimaryColor),
+      unselectedIconTheme: const IconThemeData(size: 24, color: kGray500),
+      selectedLabelStyle: baseTextStyle.copyWith(
+        fontSize: 12,
+        fontWeight: FontWeight.w700,
+        color: kPrimaryColor,
+      ),
+      unselectedLabelStyle: baseTextStyle.copyWith(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: kGray500,
+      ),
+    ),
+    tabBarTheme: TabBarTheme(
+        indicatorColor: kPrimaryColor,
+        dividerColor: kGray200,
+        indicator: const BoxDecoration(
+          border: Border(bottom: BorderSide(color: kPrimaryColor, width: 4)),
+        ),
+        labelColor: kPrimaryColor,
+        unselectedLabelColor: kGray500,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 8),
+        labelStyle: baseTextStyle.copyWith(
+            fontSize: 18, fontWeight: FontWeight.w600, color: kPrimaryColor),
+        unselectedLabelStyle: baseTextStyle.copyWith(
+            fontSize: 18, fontWeight: FontWeight.w600, color: kGray500)),
     textTheme: ThemeData.dark().textTheme.copyWith(
           //headline1
           displayLarge: baseTextStyle.copyWith(
@@ -185,15 +265,5 @@ class ThemeApp {
               fontWeight: FontWeight.bold,
               letterSpacing: 0.2),
         ),
-    splashColor: Colors.transparent,
-    highlightColor: Colors.transparent,
-    hoverColor: Colors.transparent,
-    
-    appBarTheme: const AppBarTheme(
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: kDark1Color),
-    colorScheme: const ColorScheme.dark().copyWith(background: kDark1Color),
   );
 }
