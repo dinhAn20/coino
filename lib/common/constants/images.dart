@@ -46,3 +46,4 @@ const String kSelfieImage = 'assets/images/selfie_with_id_card.png';
 const String kCongratulationsImage = 'assets/images/congratulations.png';
 
 const String kGoogleIcon = 'assets/icons/google.svg';
+const String kTimeCircleIcon = 'assets/icons/time_circle.svg';

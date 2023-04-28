@@ -9,16 +9,13 @@ import '../../../widgets/cached_image.dart';
 class GraphItem extends StatelessWidget {
   const GraphItem({
     super.key,
-    required this.size,
   });
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 16),
-      width: size.width / 2.5,
+      width: 160,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           // color: kDark2,

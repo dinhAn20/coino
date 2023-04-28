@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
               ),
               actions: [
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, kSearchRoute),
                     child: kSearch.toSvg(
                         height: 28,
                         width: 28,
@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
                 child: ListView.builder(
                   itemCount: 5,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => GraphItem(size: size),
+                  itemBuilder: (context, index) => const GraphItem(),
                 ),
               ),
               const RankingList(),

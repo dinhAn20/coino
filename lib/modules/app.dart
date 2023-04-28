@@ -14,6 +14,7 @@ import 'package:trading_app/modules/my_profile/screens/change_password_screen.da
 import 'package:trading_app/modules/my_profile/screens/update_profile_screen.dart';
 
 import '../common/theme/index.dart';
+import '../crypto_search/screens/search_screen.dart';
 import '../di/injection.dart';
 import '../generated/l10n.dart';
 import 'auth/bloc/auth_cubit.dart';
@@ -57,7 +58,7 @@ class _AppState extends State<App> {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         theme: ThemeApp.lightTheme,
         darkTheme: ThemeApp.darkTheme,
         initialRoute: kMainRoute,
@@ -73,6 +74,7 @@ class _AppState extends State<App> {
           kForgotPasswordRoute: (context) => const ForgotPasswordScreen(),
           kWebViewRoute: (context) => const WebViewScreen(),
           kNotificationRoute: (context) => const NotificationScreen(),
+          kSearchRoute: (context) => const SearchScreen(),
           kChangePasswordRoute: (context) => const ChangePasswordScreen(),
           kSettingsRoute: (context) => const SettingsScreen(),
           kEditProfileRoute: (context) => const EditProfileScreen(),

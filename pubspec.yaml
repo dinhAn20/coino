@@ -98,16 +98,6 @@ flutter:
     - assets/icons/crypto_icons/
 
   fonts:
-    - family: Lato
-      fonts:
-        - asset: assets/fonts/Lato-Light.ttf
-          weight: 100
-        - asset: assets/fonts/Lato-Italic.ttf
-          style: italic
-        - asset: assets/fonts/Lato-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Lato-Bold.ttf
-          weight: 700
     - family: Urbanist
       fonts:
         - asset: assets/fonts/Urbanist-Light.ttf

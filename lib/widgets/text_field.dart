@@ -29,7 +29,11 @@ class BasicTextField extends StatelessWidget {
       this.textStyle,
       this.focusNode,
       this.fillColor,
-      this.border})
+      this.border,
+      this.prefixIcon,
+      this.contentPadding,
+      this.onClear,
+      this.filled = false})
       : super(key: key);
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
@@ -41,11 +45,13 @@ class BasicTextField extends StatelessWidget {
   final TextStyle? hintStyle;
   final TextStyle? textStyle;
   final bool? obscureText;
+  final bool filled;
   final bool multiline;
   final FocusNode? focusNode;
   final Color? fillColor;
   final InputBorder? border;
   final TextInputType keyboardType;
+  final Function()? onClear;
   final ValueChanged<String>? onFieldSubmitted;
   final String? initialValue;
   final ValueChanged<String>? onChanged;
@@ -53,6 +59,8 @@ class BasicTextField extends StatelessWidget {
   final bool? mandatory;
   final bool? readOnly;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  final EdgeInsetsGeometry? contentPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +97,7 @@ class BasicTextField extends StatelessWidget {
           height: multiline ? 150 : null,
           child: TextFormField(
             controller: controller,
+            cursorColor: kGray900,
             validator: validator,
             focusNode: focusNode,
             obscureText: obscureText ?? false,
@@ -100,26 +109,57 @@ class BasicTextField extends StatelessWidget {
             style: textStyle ?? Theme.of(context).textTheme.headlineSmall,
             decoration: InputDecoration(
               isDense: true,
-              contentPadding: const EdgeInsets.symmetric(vertical: 8),
-              suffixIcon: suffixIcon,
+              contentPadding:
+                  contentPadding ?? const EdgeInsets.symmetric(vertical: 8),
+              suffixIcon: suffixIcon ??
+                  (onClear != null
+                      ? GestureDetector(
+                          onTap: onClear,
+                          child: const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Icon(
+                              Icons.close_rounded,
+                              color: kGray900,
+                            ),
+                          ),
+                        )
+                      : null),
               hintText: hintText,
               hintStyle: hintStyle,
-              prefixIcon: (prefix?.isNotEmpty ?? false)
+              prefixIcon: prefixIcon != null
                   ? Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: Center(
-                            child: Text(prefix!,
-                                style: Theme.of(context).textTheme.labelMedium),
+                        Center(
+                          child: SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: prefixIcon,
                           ),
                         ),
                       ],
                     )
-                  : null,
-              // filled: true,
+                  : ((prefix?.isNotEmpty ?? false)
+                      ? Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Center(
+                                child: Text(prefix!,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium),
+                              ),
+                            ),
+                          ],
+                        )
+                      : null),
+              filled: filled,
               fillColor: fillColor,
               border: border,
             ),
