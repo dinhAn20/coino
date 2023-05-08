@@ -1,4 +1,8 @@
 {
+  "coino": "Coino",
+  "continue": "Continue",
+  "whatIsYourName": "What is your name? 🧑 👩",
+  "continueWithGoogle": "Continue with Google",
   "noPermission": "No Permission",
   "password": "Password",
   "confirmPassword": "Confirm Password",
@@ -15,6 +19,7 @@
   "invalidFormat": "Invalid format",
   "dontHaveAnAccount": "Don't have an account?",
   "signUp": "Sign Up",
+  "signIn": "Sign In",
   "noItems": "No Items",
   "loginTo": "Login To",
   "signUpTo": "Sign Up To",
@@ -47,7 +52,6 @@
   "language": "Language",
   "juzu": "Juzu",
   "book": "Book",
-  "ayah": "Ayah",
   "juZu": "JuZu",
   "contactUs": "Contact Us",
   "ayah": "Ayah"

@@ -14,7 +14,8 @@ class ListContent<T> extends StatelessWidget {
       this.controller,
       this.padding,
       this.errMsg,
-      this.separatorWidget})
+      this.separatorWidget,
+      this.emptyMsg})
       : super(key: key);
   final List<T>? list;
   final DataSourceStatus? status;
@@ -23,14 +24,17 @@ class ListContent<T> extends StatelessWidget {
   final Widget Function(T) itemBuilder;
   final ScrollController? controller;
   final String? errMsg;
+  final String? emptyMsg;
   final EdgeInsetsGeometry? padding;
   final Widget? separatorWidget;
 
   @override
   Widget build(BuildContext context) {
     return ListBundle(
+      padding : padding,
       status: status,
       errMsg: errMsg,
+      emptyMsg: emptyMsg,
       onRefresh: (BuildContext context) async {
         onRefresh();
       },

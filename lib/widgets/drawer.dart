@@ -83,7 +83,7 @@ class _DrawerAppState extends State<DrawerApp> with EventBusMixin {
                       child: BasicButton(
                     label: S.of(context).login,
                     onPressed: () {
-                      Navigator.of(context).popAndPushNamed(kLoginRoute);
+                      Navigator.of(context).popAndPushNamed(kSignInRoute);
                     },
                   )),
                 ],

@@ -9,7 +9,13 @@ extension DateTimeX on DateTime {
   }
 
   String toDDMMYYYYString() {
-    final DateFormat formatter = DateFormat('dd-MM-yyyy');
+    final DateFormat formatter = DateFormat('dd/MM/yyyy');
+    final String formatted = formatter.format(toLocal());
+    return formatted;
+  }
+
+  String toTimeOfDay() {
+    final DateFormat formatter = DateFormat('hh:mm:ss');
     final String formatted = formatter.format(toLocal());
     return formatted;
   }

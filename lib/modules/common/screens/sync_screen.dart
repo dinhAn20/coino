@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:trading_app/common/constants/images.dart';
+import 'package:trading_app/widgets/cached_image.dart';
 
 import '../../../common/constants/routes.dart';
+import '../../../configs/size_config.dart';
 import '../../../di/injection.dart';
-import '../../../widgets/loading_indicator.dart';
 import '../../auth/bloc/auth_cubit.dart';
 import '../../auth/bloc/auth_state.dart';
 
@@ -15,10 +17,11 @@ class SyncScreen extends StatefulWidget {
 }
 
 class _SyncScreenState extends State<SyncScreen> {
+  Size get size => MediaQuery.of(context).size;
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration.zero, () {
+    Future.delayed(const Duration(seconds: 2), () {
       AuthState state = getIt<AuthCubit>().state;
       _listener(context, state);
     });
@@ -26,10 +29,36 @@ class _SyncScreenState extends State<SyncScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: BlocListener<AuthCubit, AuthState>(
         listener: _listener,
-        child: const Center(child: LoadingIndicator()),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Spacer(),
+            Center(
+              child: Column(
+                children: [
+                  CachedImage(
+                    url: kLogo,
+                    width: getProportionateScreenHeight(173),
+                    height: getProportionateScreenHeight(173),
+                  ),
+                  SizedBox(height: getProportionateScreenHeight(40)),
+                  Text(
+                    "Coino",
+                    style: Theme.of(context).textTheme.displayLarge,
+                  ),
+                ],
+              ),
+            ),
+            const Spacer(),
+            const CircularProgressIndicator(),
+            SizedBox(height: getProportionateScreenHeight(100)),
+          ],
+        ),
       ),
     );
   }
@@ -38,7 +67,7 @@ class _SyncScreenState extends State<SyncScreen> {
     if (state.token?.isNotEmpty ?? false) {
       Navigator.of(context).pushReplacementNamed(kMainRoute);
     } else {
-      Navigator.of(context).pushReplacementNamed(kLoginRoute);
+      Navigator.of(context).pushReplacementNamed(kOnboardingRoute);
     }
   }
 }

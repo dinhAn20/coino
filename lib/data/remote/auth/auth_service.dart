@@ -111,7 +111,7 @@ class AuthServiceImpl implements AuthService {
   Future<DataState<Avatar?>> uploadFile(XFile file) async {
     FormData formData;
     formData = FormData.fromMap({
-      "image": await MultipartFile.fromFile(file!.path, filename: file!.name)
+      "image": await MultipartFile.fromFile(file.path, filename: file.name)
     });
     final ApiResponse result =
         await _apiClient.post(path: ApiEndpoint.files, data: formData);

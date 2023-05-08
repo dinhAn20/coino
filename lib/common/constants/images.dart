@@ -1,22 +1,52 @@
-const String iconFly = 'assets/icons/ic_fly.png';
-const String icLogo = 'assets/icons/logo.jpg';
+const String kLogo = 'assets/icons/logo.svg';
 const String kDefaultImage = 'assets/images/default.jpeg';
-const String kHeaderLogo = 'assets/images/header_logo.png';
 const String kEmptyImage = 'assets/images/empty.png';
+//crypto icons 
+const String kBitcoinIcon = 'assets/icons/crypto_icons/bitcoin.png';
+const String kSolanaIcon = 'assets/icons/crypto_icons/solana.png';
+const String kEthereumIcon = 'assets/icons/crypto_icons/ethereum.png';
 
-const String kTulipIcon = 'assets/icons/tulip-icon.png';
-const String kOrchidIcon = 'assets/icons/orchid-icon.png';
-const String kDhaliaIcon = 'assets/icons/dhalia-icon.png';
-const String kServiceIcon = 'assets/icons/Service.png';
-const String kFacebookIcon = 'assets/icons/social_icons/facebook.png';
-const String kInstagramIcon = 'assets/icons/social_icons/instagram.png';
-const String kTiktokIcon = 'assets/icons/social_icons/tiktok.png';
-const String kTwitterIcon = 'assets/icons/social_icons/twitter.png';
-const String kWebIcon = 'assets/icons/social_icons/webicon.png';
-const String kYoutubeIcon = 'assets/icons/social_icons/youtube.png';
-const String kFollowIcon = 'assets/icons/follow-green.png';
-const String kUnFollowIcon = 'assets/icons/follow-grey.png';
+//bottom navigation bar
+const String kActivityFill = 'assets/icons/Activity_fill.svg';
+const String kActivity = 'assets/icons/Activity.svg';
+const String kHome = 'assets/icons/Home.svg';
+const String kHomeFill = 'assets/icons/Home_fill.svg';
+const String kWallet = 'assets/icons/Wallet.svg';
+const String kWalletFill = 'assets/icons/Wallet_fill.svg';
+const String kPaper = 'assets/icons/Paper.svg';
+const String kPaperFill = 'assets/icons/Paper_fill.svg';
+const String kProfileFill = 'assets/icons/Profile_fill.svg';
+const String kProfile = 'assets/icons/Profile.svg';
 
-const String kEnglish = 'assets/icons/english.jpg';
-const String kSwahili = 'assets/icons/swahili_flag.jpg';
-const String kArabic = 'assets/icons/arabic_flag.png';
+
+
+//onboarding
+const String kOnboarding1Image = 'assets/images/onboarding_1.png';
+const String kOnboarding2Image = 'assets/images/onboarding_2.png';
+const String kOnboarding3Image = 'assets/images/onboarding_3.png';
+const String kOnboarding4Image = 'assets/images/onboarding_4.png';
+const String kOnboarding5Image = 'assets/images/onboarding_5.png';
+
+//toolbar
+const String kNotificationIcon = 'assets/icons/Notification.svg';
+const String kScanIcon = 'assets/icons/Scan.svg';
+const String kSearchIcon = 'assets/icons/Search.svg';
+const String kSettingIcon = 'assets/icons/Setting.svg';
+const String kSendIcon = 'assets/icons/Send.svg';
+const String kMoreCircleIcon = 'assets/icons/More_circle.svg';
+
+//Notification
+const String kTickSquare = 'assets/icons/tick_square.png';
+const String kTickerStarSquare = 'assets/icons/ticker_star.png';
+const String kWalletSquare = 'assets/icons/wallet.png';
+const String kWorkSquare = 'assets/icons/work.png';
+const String kProfileSquare = 'assets/icons/profile.png';
+const String kInforSquare = 'assets/icons/info_square.png';
+
+
+const String kSelfieImage = 'assets/images/selfie_with_id_card.png';
+const String kCongratulationsImage = 'assets/images/congratulations.png';
+
+const String kGoogleIcon = 'assets/icons/google.svg';
+const String kTimeCircleIcon = 'assets/icons/time_circle.svg';
+const String kChartIcon = 'assets/icons/chart.svg';
