@@ -9,12 +9,13 @@ class TagMarket extends StatelessWidget {
       this.backgroundColor,
       this.borderColor = kPrimaryColor,
       this.hasBorder = false,
-      this.labelColor})
+      this.labelColor, this.labelStyle})
       : super(key: key);
   final String label;
   final Color? backgroundColor;
   final Color borderColor;
   final Color? labelColor;
+  final TextStyle? labelStyle;
   final bool hasBorder;
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class TagMarket extends StatelessWidget {
           border: hasBorder ? Border.all(color: borderColor) : null),
       child: Center(
         child: Text(label,
-            style: Theme.of(context)
+            style:labelStyle?? Theme.of(context)
                 .textTheme
                 .labelSmall!
                 .w600

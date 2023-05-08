@@ -53,7 +53,7 @@ class _SearchScreenState extends State<SearchScreen> {
             focusNode: _focusNode,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
             prefixIcon:
-                kSearch.toSvg(color: _prefixColor, height: 20, width: 20),
+                kSearchIcon.toSvg(color: _prefixColor, height: 20, width: 20),
           ),
           const SizedBox(height: 2),
         ],
@@ -72,9 +72,7 @@ class _SearchScreenState extends State<SearchScreen> {
 }
 
 class SearchBody extends StatelessWidget {
-  const SearchBody({
-    super.key,
-  });
+  const SearchBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -111,9 +109,7 @@ class SearchBody extends StatelessWidget {
           7,
           (index) => Padding(
             padding: const EdgeInsets.only(bottom: 24),
-            child: CryptoSearchItem(
-              isFavorite: index.isEven,
-            ),
+            child: CryptoSearchItem(isFavorite: index.isEven),
           ),
         ).toList(),
       ],
@@ -154,9 +150,7 @@ class PreviousSearch extends StatelessWidget {
           7,
           (index) => const Padding(
             padding: EdgeInsets.only(bottom: 24),
-            child: CryptoSearchItem(
-              isHistory: true,
-            ),
+            child: CryptoSearchItem(isHistory: true),
           ),
         ).toList(),
       ],

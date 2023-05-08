@@ -9,6 +9,7 @@ const String kForgotPasswordRoute = '/forgot-pass';
 const String kWebViewRoute = '/web-view';
 const String kNotificationRoute = '/notification';
 const String kSearchRoute = '/search-crypto';
+const String kCryptoDetailRoute = '/crypto-detail';
 const String kMyProfileRoute = '/profile';
 const String kChangePasswordRoute = '/change-password';
 const String kSettingsRoute = '/settings';

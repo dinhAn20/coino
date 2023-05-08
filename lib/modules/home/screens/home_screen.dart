@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
               actions: [
                 GestureDetector(
                     onTap: () => Navigator.pushNamed(context, kSearchRoute),
-                    child: kSearch.toSvg(
+                    child: kSearchIcon.toSvg(
                         height: 28,
                         width: 28,
                         color: Theme.of(context)
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
                 const SizedBox(width: 20),
                 GestureDetector(
                     onTap: () {},
-                    child: kScan.toSvg(
+                    child: kScanIcon.toSvg(
                         height: 28,
                         width: 28,
                         color: Theme.of(context)
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> with EventBusMixin {
                 GestureDetector(
                     onTap: () =>
                         Navigator.pushNamed(context, kNotificationRoute),
-                    child: kNotification.toSvg(
+                    child: kNotificationIcon.toSvg(
                         height: 28,
                         width: 28,
                         color: Theme.of(context)

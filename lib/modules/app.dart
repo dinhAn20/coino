@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:trading_app/common/constants/routes.dart';
 import 'package:trading_app/common/event/event_bus_mixin.dart';
 import 'package:trading_app/common/utils/navigator_utils.dart';
+import 'package:trading_app/crypto_detail/screens/crypto_detail_screen.dart';
 import 'package:trading_app/modules/auth/screens/forgot_password_screen.dart';
 import 'package:trading_app/modules/auth/screens/sign_up_screen.dart';
 import 'package:trading_app/modules/common/bloc/app_cubit.dart';
@@ -75,6 +76,7 @@ class _AppState extends State<App> {
           kWebViewRoute: (context) => const WebViewScreen(),
           kNotificationRoute: (context) => const NotificationScreen(),
           kSearchRoute: (context) => const SearchScreen(),
+          kCryptoDetailRoute: (context) => const CryptoDetailScreen(),
           kChangePasswordRoute: (context) => const ChangePasswordScreen(),
           kSettingsRoute: (context) => const SettingsScreen(),
           kEditProfileRoute: (context) => const EditProfileScreen(),

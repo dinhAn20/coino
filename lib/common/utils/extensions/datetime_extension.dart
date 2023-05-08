@@ -14,6 +14,12 @@ extension DateTimeX on DateTime {
     return formatted;
   }
 
+  String toTimeOfDay() {
+    final DateFormat formatter = DateFormat('hh:mm:ss');
+    final String formatted = formatter.format(toLocal());
+    return formatted;
+  }
+
   String eventTimeFormat() {
     final DateFormat formatter = DateFormat('MMM dd, yyyy');
     final String formatted = formatter.format(toLocal());

@@ -28,10 +28,12 @@ const String kOnboarding4Image = 'assets/images/onboarding_4.png';
 const String kOnboarding5Image = 'assets/images/onboarding_5.png';
 
 //toolbar
-const String kNotification = 'assets/icons/Notification.svg';
-const String kScan = 'assets/icons/Scan.svg';
-const String kSearch = 'assets/icons/Search.svg';
-const String kSetting = 'assets/icons/Setting.svg';
+const String kNotificationIcon = 'assets/icons/Notification.svg';
+const String kScanIcon = 'assets/icons/Scan.svg';
+const String kSearchIcon = 'assets/icons/Search.svg';
+const String kSettingIcon = 'assets/icons/Setting.svg';
+const String kSendIcon = 'assets/icons/Send.svg';
+const String kMoreCircleIcon = 'assets/icons/More_circle.svg';
 
 //Notification
 const String kTickSquare = 'assets/icons/tick_square.png';
@@ -47,3 +49,4 @@ const String kCongratulationsImage = 'assets/images/congratulations.png';
 
 const String kGoogleIcon = 'assets/icons/google.svg';
 const String kTimeCircleIcon = 'assets/icons/time_circle.svg';
+const String kChartIcon = 'assets/icons/chart.svg';

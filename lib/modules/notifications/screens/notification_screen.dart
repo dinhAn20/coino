@@ -22,7 +22,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         actions: [
           GestureDetector(
             onTap: () {},
-            child: kSetting.toSvg(
+            child: kSettingIcon.toSvg(
                 height: 28,
                 width: 28,
                 color: Theme.of(context).appBarTheme.actionsIconTheme?.color),
